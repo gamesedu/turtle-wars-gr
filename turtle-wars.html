@@ -23,12 +23,12 @@
 		program=program.replace(/ΕΠΙΘΕΣΗ/gi, "shoot");
 		program=program.replace(/ΠΥΡ/gi, "shoot");
 		program=program.replace(/ΚΕΦΑΛΗ/gi, "head");
-		program=program.replace(/ΕΙΝΑΙΙΣΟ/gi, "eq");
-		program=program.replace(/ΕΙΝΑΙ=/gi, "eq");
-		program=program.replace(/ΕΙΝΑΙ>=/gi, "ge");
-		program=program.replace(/ΕΙΝΑΙ<=/gi, "le");
-		program=program.replace(/ΕΙΝΑΙ>/gi, "gt");
-		program=program.replace(/ΕΙΝΑΙ</gi, "lt");
+		program=program.replace(/ΕΙΝΑΙΙΣΟ?/gi, "eq?");
+		program=program.replace(/ΕΙΝΑΙ=?/gi, "eq?");
+		program=program.replace(/ΕΙΝΑΙ>=?/gi, "ge?");
+		program=program.replace(/ΕΙΝΑΙ<=?/gi, "le?");
+		program=program.replace(/ΕΙΝΑΙ>?/gi, "gt?");
+		program=program.replace(/ΕΙΝΑΙ<?/gi, "lt?");
 		program=program.replace(/ΓΙΑΠΑΝΤΑ/gi, "forever");
 		program=program.replace(/ΟΣΟ/gi, "while");
 		program=program.replace(/ΓΙΑΟΣΟ/gi, "while");
