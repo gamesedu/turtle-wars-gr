@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-	<TITLE>Turtle Wars Greek v001 </TITLE>
+	<TITLE>Turtle Wars Greek v001b </TITLE>
     <link rel="stylesheet" href="turtle-wars.css"></link>
     <script src="turtle-lang.js"></script>
     <script src="turtle-game.js"></script>
@@ -10,7 +10,7 @@
 <script>
 	   function translate_program(program){
 		
-		alert("not tranlasted: "+program);
+		//alert("not tranlasted: "+program);
 		
 		program=program.replace(/ΔΕΞΙΑ/gi,"rt");
 		program=program.replace(/ΑΡΙΣΤΕΡΑ/gi, "lt");
@@ -38,7 +38,7 @@
 		program=program.replace(/ΑΡ/gi, "lt");
 		program=program.replace(/ΜΠ/gi, "fd");		
 		
-		alert("tranlasted: "+program);
+		//alert("tranlasted: "+program);
 		
 		return program;
 	   }
@@ -91,14 +91,13 @@
     </div>
     <div id="turtle2">
       <textarea id="green" cols="100" rows="40"
->forever {
-    while { eq? (head (look 0 5)) 1 } {rt 3},
-    rt 2,
-    shoot!,
-    fd 25
+>ΓΙΑΠΑΝΤΑ {
+    ΟΣΟ { ΕΙΝΑΙ=? (ΚΕΦΑΛΗ (ΚΟΙΤΑ 0 5)) 1 } {ΔΕΞΙΑ 3},
+    ΔΕΞΙΑ 2,
+    ΠΥΡ!,
+    ΜΠΡΟΣΤΑ 25
 }
 </textarea>
     </div>
-	ΔΟΚΙΜΗ utf8
   </body>
 </html>
