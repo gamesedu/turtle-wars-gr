@@ -2,10 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
+	<TITLE>Turtle Wars Greek v001 </TITLE>
     <link rel="stylesheet" href="turtle-wars.css"></link>
     <script src="turtle-lang.js"></script>
     <script src="turtle-game.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
+<script>
+	   function translate_program(program){
+		
+		alert("not tranlasted: "+program);
+		
+		program=program.replace(/ΔΕΞΙΑ/gi,"rt");
+		program=program.replace(/ΑΡΙΣΤΕΡΑ/gi, "lt");
+		program=program.replace(/ΜΠΡΟΣΤΑ/gi, "fd");
+
+		
+		program=program.replace(/ΕΑΝ/gi, "if");
+		program=program.replace(/ΚΟΙΤΑ/gi, "look");
+		program=program.replace(/ΟΥΡΑ/gi, "tail");
+		program=program.replace(/ΕΠΙΘΕΣΗ/gi, "shoot");
+		program=program.replace(/ΠΥΡ/gi, "shoot");
+		program=program.replace(/ΚΕΦΑΛΗ/gi, "head");
+		program=program.replace(/ΕΙΝΑΙΙΣΟ/gi, "eq");
+		program=program.replace(/ΕΙΝΑΙ=/gi, "eq");
+		program=program.replace(/ΕΙΝΑΙ>=/gi, "ge");
+		program=program.replace(/ΕΙΝΑΙ<=/gi, "le");
+		program=program.replace(/ΕΙΝΑΙ>/gi, "gt");
+		program=program.replace(/ΕΙΝΑΙ</gi, "lt");
+		program=program.replace(/ΓΙΑΠΑΝΤΑ/gi, "forever");
+		program=program.replace(/ΟΣΟ/gi, "while");
+		program=program.replace(/ΓΙΑΟΣΟ/gi, "while");
+		program=program.replace(/ΕΠΑΝΑΛΑΒΕ>/gi, "rep");
+		program=program.replace(/ΕΠΑΝΕΛΑΒΕ>/gi, "rep");
+		program=program.replace(/ΔΕ/gi,"rt");
+		program=program.replace(/ΑΡ/gi, "lt");
+		program=program.replace(/ΜΠ/gi, "fd");		
+		
+		alert("tranlasted: "+program);
+		
+		return program;
+	   }
+</script>	
     <script>
       $(function () {
           var game = null;
@@ -15,13 +52,16 @@
                   game = null;
               }
               var canvas = $("canvas#field").get(0);
-
-              var brown = new turtle_game.Turtle("brown", $('#turtle1 textarea').val(), 'rgb(80,40,0)');
+			  var turtle_brown_program=translate_program($('#turtle1 textarea').val());
+			  
+			  //alert("tranlasted: "+turtle_brown_program);
+              var brown = new turtle_game.Turtle("brown", turtle_brown_program, 'rgb(80,40,0)');
               brown.x = brown.r * 2;
               brown.y = brown.r * 2;
               brown.h = Math.random() * 2 * Math.PI;
-
-              var green = new turtle_game.Turtle("green", $('#turtle2 textarea').val(), 'rgb(0,128,0)');
+			  
+			  var turtle_green_program=translate_program($('#turtle2 textarea').val());
+              var green = new turtle_game.Turtle("green", turtle_green_program, 'rgb(0,128,0)');
               green.x = canvas.width - green.r * 2;
               green.y = canvas.height - green.r * 2;
               green.h = Math.random() * 2 * Math.PI;
@@ -41,11 +81,11 @@
     </div>
     <div id="turtle1">
       <textarea id="brown" cols="100" rows="40"
->forever {
-    fd 10,
-    rt 2,
-    if (lt? (tail (look 0 90)) 50) {rt 20} {!},
-    shoot!
+>ΓΙΑΠΑΝΤΑ {
+    ΜΠΡΟΣΤΑ 10,
+    ΔΕΞΙΑ 2,
+    ΕΑΝ (ΑΡΙΣΤΕΡΑ? (ΟΥΡΑ (ΚΟΙΤΑ 0 90)) 50) {ΔΕΞΙΑ 20} {!},
+    ΠΥΡ!
 }
       </textarea>
     </div>
@@ -59,5 +99,6 @@
 }
 </textarea>
     </div>
+	ΔΟΚΙΜΗ utf8
   </body>
 </html>
