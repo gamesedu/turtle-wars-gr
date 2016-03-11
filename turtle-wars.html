@@ -28,7 +28,7 @@
 		program=program.replace(/ΕΙΝΑΙ>=?/gi, "ge?");
 		program=program.replace(/ΕΙΝΑΙ<=?/gi, "le?");
 		program=program.replace(/ΕΙΝΑΙ>?/gi, "gt?");
-		program=program.replace(/ΕΙΝΑΙ<?/gi, "lt?");
+		program=program.replace(/ΕΙΝΑΙ<;/gi, "lt?");//problem because lt's translation is the php tag!!!
 		program=program.replace(/ΓΙΑΠΑΝΤΑ/gi, "forever");
 		program=program.replace(/ΟΣΟ/gi, "while");
 		program=program.replace(/ΓΙΑΟΣΟ/gi, "while");
