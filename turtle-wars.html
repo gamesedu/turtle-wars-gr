@@ -29,10 +29,10 @@
 		program=program.replace(/ΕΙΝΑΙ<=?/gi, "le?");
 		program=program.replace(/ΕΙΝΑΙ>?/gi, "gt?");
 		
-		var regexstring_is_lower = "ΕΙΝΑΙ<"+"?";
-		var regexp_is_lower = new RegExp( regexstring_is_lower, "gi");
-		program=program.replace(regexp_is_lower, "lt?");//problem because lt's translation is the php tag!!!
-		//program=program.replace(/ΕΙΝΑΙ<;/gi, "lt?");//problem because lt's translation is the php tag!!!
+	//	var regexstring_is_lower = "ΕΙΝΑΙ<"+"?";
+	//	var regexp_is_lower = new RegExp( regexstring_is_lower, "gi");
+	//	program=program.replace(regexp_is_lower, "lt?");//problem because lt's translation is the php tag!!!
+		program=program.replace(/ΕΙΝΑΙ<;/gi, "lt?");//problem because lt's translation is the php tag!!!
 		
 		program=program.replace(/ΓΙΑΠΑΝΤΑ/gi, "forever");
 		program=program.replace(/ΓΙΑΟΣΟ/gi, "while");
