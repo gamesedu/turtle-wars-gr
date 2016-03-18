@@ -17,7 +17,7 @@
 		program=program.replace(/ΜΠΡΟΣΤΑ/gi, "fd");
 
 		
-		program=program.replace(/ΕΑΝ/gi, "if");
+		
 		program=program.replace(/ΚΟΙΤΑ/gi, "look");
 		program=program.replace(/ΟΥΡΑ/gi, "tail");
 		program=program.replace(/ΕΠΙΘΕΣΗ/gi, "shoot");
@@ -28,12 +28,18 @@
 		program=program.replace(/ΕΙΝΑΙ>=?/gi, "ge?");
 		program=program.replace(/ΕΙΝΑΙ<=?/gi, "le?");
 		program=program.replace(/ΕΙΝΑΙ>?/gi, "gt?");
-		program=program.replace(/ΕΙΝΑΙ<;/gi, "lt?");//problem because lt's translation is the php tag!!!
+		
+		var regexstring_is_lower = "ΕΙΝΑΙ<"+"?";
+		var regexp_is_lower = new RegExp( regexstring_is_lower, "gi");
+		program=program.replace(regexp_is_lower, "lt?");//problem because lt's translation is the php tag!!!
+		//program=program.replace(/ΕΙΝΑΙ<;/gi, "lt?");//problem because lt's translation is the php tag!!!
+		
 		program=program.replace(/ΓΙΑΠΑΝΤΑ/gi, "forever");
-		program=program.replace(/ΟΣΟ/gi, "while");
 		program=program.replace(/ΓΙΑΟΣΟ/gi, "while");
+		program=program.replace(/ΟΣΟ/gi, "while");
 		program=program.replace(/ΕΠΑΝΑΛΑΒΕ>/gi, "rep");
 		program=program.replace(/ΕΠΑΝΕΛΑΒΕ>/gi, "rep");
+		program=program.replace(/ΕΑΝ/gi, "if");
 		program=program.replace(/ΔΕ/gi,"rt");
 		program=program.replace(/ΑΡ/gi, "lt");
 		program=program.replace(/ΜΠ/gi, "fd");		
