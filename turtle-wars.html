@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-	<TITLE>Turtle Wars Greek v001b </TITLE>
+	<TITLE>Turtle Wars Greek v001c </TITLE>
     <link rel="stylesheet" href="turtle-wars.css"></link>
     <script src="turtle-lang.js"></script>
     <script src="turtle-game.js"></script>
@@ -23,17 +23,12 @@
 		program=program.replace(/ΕΠΙΘΕΣΗ/gi, "shoot");
 		program=program.replace(/ΠΥΡ/gi, "shoot");
 		program=program.replace(/ΚΕΦΑΛΗ/gi, "head");
-		program=program.replace(/ΕΙΝΑΙΙΣΟ?/gi, "eq?");
-		program=program.replace(/ΕΙΝΑΙ=?/gi, "eq?");
-		program=program.replace(/ΕΙΝΑΙ>=?/gi, "ge?");
-		program=program.replace(/ΕΙΝΑΙ<=?/gi, "le?");
-		program=program.replace(/ΕΙΝΑΙ>?/gi, "gt?");
-		
-	//	var regexstring_is_lower = "ΕΙΝΑΙ<"+"?";
-	//	var regexp_is_lower = new RegExp( regexstring_is_lower, "gi");
-	//	program=program.replace(regexp_is_lower, "lt?");//problem because lt's translation is the php tag!!!
-		program=program.replace(/ΕΙΝΑΙ<;/gi, "lt?");//problem because lt's translation is the php tag!!!
-		
+		program=program.replace(/ΕΙΝΑΙΙΣΟ\?/gi, "eq?");
+		program=program.replace(/ΕΙΝΑΙ=\?/gi, "eq?");
+		program=program.replace(/ΕΙΝΑΙ>=\?/gi, "ge?");
+		program=program.replace(/ΕΙΝΑΙ<=\?/gi, "le?");
+		program=program.replace(/ΕΙΝΑΙ>\?/gi, "gt?");
+		program=program.replace(/ΕΙΝΑΙ<\?/gi, "lt?");//(fixed 160318)problem because lt's translation is the php tag!!!
 		program=program.replace(/ΓΙΑΠΑΝΤΑ/gi, "forever");
 		program=program.replace(/ΓΙΑΟΣΟ/gi, "while");
 		program=program.replace(/ΟΣΟ/gi, "while");
@@ -90,7 +85,7 @@
 >ΓΙΑΠΑΝΤΑ {
     ΜΠΡΟΣΤΑ 10,
     ΔΕΞΙΑ 2,
-    ΕΑΝ (ΑΡΙΣΤΕΡΑ? (ΟΥΡΑ (ΚΟΙΤΑ 0 90)) 50) {ΔΕΞΙΑ 20} {!},
+    ΕΑΝ (ΕΙΝΑΙ<? (ΟΥΡΑ (ΚΟΙΤΑ 0 90)) 50) {ΔΕΞΙΑ 20} {!},
     ΠΥΡ!
 }
       </textarea>
