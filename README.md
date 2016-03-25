@@ -1,3 +1,5 @@
+<img src="turtle_wars_2player.jpg" />
+
 # Getting started.
 
 Try it out: load up
